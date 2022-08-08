@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+ 
+	<html lang="en" >
+ <head>
+    <meta charset=utf-8 />
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+	 <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet">
+<link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
+    
+	<script src="https://unpkg.com/video.js/dist/video.js"></script>
+      <script src="https://unpkg.com/videojs-contrib-hls/dist/videojs-contrib-hls.js"></script>
+       
+    </head>
+<style>
+.a, .b, .c {
+  font-family:'Fredoka One';
+  position:absolute;
+  font-size:30px;
+  top:50px;
+  left:71px;
+  width:100vh;
+  text-shadow: 2px 2px black;
+}
+.a {color:#432b72; z-index:3;}
+.b {color:blue; z-index:2;}
+.c {color: orange; z-index:1;}
+
+
+.a {
+  animation: shuffle_a 3s linear 3s infinite;
+}
+@keyframes shuffle_a {
+  0% {top:50px; opacity:1; z-index:3;}
+  20% {top:80px;opacity:.95;z-index:3;}
+  30% {top:70px;opacity:.95; z-index:1;}
+  40% {top:60px;opacity:.95; z-index:1;transform:rotate(.22deg);}
+  50% {top:50px;opacity:.9; z-index:1;}
+  85% {opacity:1; z-index:2;}
+  90% {opacity:1; z-index:3;}
+
+  
+    0% {opacity:0}
+    4% {opacity:1}
+    10% {opacity:0}
+    14% {opacity:1}
+    17% {opacity:0}
+    18% {opacity:0}
+    28% {opacity:.60}
+    39% {opacity:1}
+    58% {opacity:1}
+    69% {opacity:0}
+
+}
+.b {
+  animation: shuffle_b 3s linear 3s infinite;
+}
+@keyframes shuffle_b {
+  0% {top:50px; opacity:1; z-index:2;transform:rotate(0deg);}
+  30% {top:50px; opacity:1; z-index:2;}
+  45% {top:50px; opacity:.85; z-index:2;}
+  55% {top:80px; opacity:.85; z-index:1;transform:rotate(-2.42deg);}
+  65% {top:70px; opacity:.85; z-index:1;}
+  75% {top:60px; opacity:.85; z-index:1;}
+  90% {top:50px;opacity:.94; z-index:1;transform:rotate(0deg);}
+  98% {top:55px;opacity:.90; z-index:2;transform:rotate(0deg);}
+
+    0% {opacity:1}
+    35.7% {opacity:1}
+    38% {opacity:0}
+    39% {opacity:1}
+    40% {opacity:0}
+    43% {opacity:.4}
+    59% {opacity:1}
+    82% {opacity:0}
+    89.3% {opacity:1}
+}
+.c {
+  animation: shuffle_c 3s linear 6s infinite;
+}
+@keyframes shuffle_c {
+  0% {top:50px; opacity:1; z-index:1;}
+  49% {top:50px; opacity:1; z-index:1;}
+  70% {top:50px; 40px; opacity:2; z-index:2;}
+  77% {top:40px; opacity:1; z-index:3;}
+  82% {top:40px; opacity:1; z-index:2;}
+  88% {top:70px;opacity:1; z-index:3;}
+  95% {top:65px;opacity:1; z-index:1;}
+  95% {top:52px;opacity:1; z-index:1;}
+
+  
+
+    58% {opacity:1}
+    59% {opacity:0}
+    63% {opacity:1}
+    78% {opacity:0}
+    88% {opacity:.30}
+    98% {opacity:1}
+}
+body {
+  font-family: avenir, sans-serif;
+  background-color:grey;
+}
+main {
+  padding-top:80px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.container {
+padding-top:20px;
+  position:fixed;
+  z-index:5;
+  left:28px;
+  top:-40px;
+  width:300px;
+  height:300px;
+  color:white;
+}
+.logo {
+ position:fixed;
+  z-index:6;
+  left:49%;
+  top:60x;
+  width:300px;
+  height:300px;
+}
+.video {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+  background-color: transparent;
+
+}
+#my_video_1, #my_video_2 {
+	left:8px;
+	width:590px;
+	height:340px;
+	}
+.text {
+
+margin-top: 2;
+margin-left:20;
+color:white;
+background:black;
+}
+.spacer {
+display: inline-flex;
+text-align: center;
+font-family: 'JetBrains Mono';
+position:relative;
+color:white;
+margin-top:120;
+padding-bottom:90px;
+left:8px;}
+</style>
+ 
+</head>
+<body translate="no">
+  <main>
+    <div class="container">
+		<div class="logo">
+      <div class = "a">espyresiduals</div>
+      <div class = "b">espyresiduals</div>
+      <div class = "c">espyresiduals</div>
+	  </div>
+    </div>
+	
+	     <video id="my_video_1" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+      data-setup='{}'>
+        <source src="http://192.168.1.80/video/stream.m3u8" type="application/x-mpegURL">
+      </video>
+      <div class="spacer">RATM.MOV</div>
+	  
+	  	     <video id="my_video_2" class="video-js vjs-fluid vjs-default-skin" controls preload="auto"
+      data-setup='{}'>
+        <source src="http://192.168.1.80/video/stream.m3u8" type="application/x-mpegURL">
+      </video>
+            <div class="spacer">RTJ.EXE</div>
+
+	  
+
+      
+</body>
+
+</html>
